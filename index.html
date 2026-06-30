@@ -12,6 +12,9 @@
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta name="color-scheme" content="light dark" />
   <title>Citrus CCD · LIFT Mentor Match Pilot Program</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <meta name="description" content="Citrus Community College District — LIFT Mentor Match Pilot Program dashboard. $100,000 Tier 2 award under the 2025–2028 EEO Innovative Best Practices initiative as part of the 10-college LIFT Alliance (LIFT Alliance). Mentor & Match Professional Platform deployment." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,11 +57,12 @@
            hero card: Maroon (primary). Accents: Poppy + Blue. Neutrals:
            Taupe + Brown + Cream.
         */
-      /* Citrus CCD brand-standards palette (per official brand book)
-         Primary:   Maroon #004371, Poppy #F15A25, Blue #0067A6
-         Secondary: Taupe  #F58220, Teal  #004371, Poppy #F15A25 (deep neutral aliased to poppy per direction)
-         The CSS variable names are kept generic so the dashboard structure
-         doesn't change; values are remapped onto the actual brand palette. */
+      /* Citrus College brand palette (per official Style Guide, fall 2025 brand identity)
+         Primary Blue   #004371   Primary Orange   #F15A25
+         Secondary Blue #0067A6   Secondary Orange #F58220
+         Accent Yellow  #FDB714   Beige            #F5CE94
+         The legacy --avc-* variable names are kept so the dashboard structure
+         doesn't change; their values map onto the Citrus brand palette. */
       --ccc-dark-blue:#004371; --ccc-darker-blue:#002F50; --ccc-medium-blue:#0067A6;
       --ccc-light-blue:#7FB0D6; --ccc-gold:#F58220; --ccc-dark-gold:#F15A25;
       --avc-maroon:#004371;   /* primary anchor */
@@ -705,6 +709,9 @@
     .cccco-wordmark { display:block; width:100%; max-width:220px; height:auto; }
     .cccco-wordmark--white { filter:none; }
     .avc-logo-img { display:block; width:100%; max-width:170px; height:auto; }
+    /* Official Citrus College primary logo on a clean white chip (brand-compliant on the dark-blue sidebar) */
+    .college-logo-chip { display:block; background:#fff; border-radius:12px; padding:13px 15px; box-shadow:0 2px 10px rgba(0,0,0,0.18); }
+    .college-logo-img { display:block; width:100%; height:auto; max-width:100%; }
     .avc-project-name { font-family:var(--font-body); font-size:12px; font-weight:500; color:rgba(255,255,255,0.88); line-height:1.4; margin-top:14px; letter-spacing:0.01em; }
     .logo-divider { height:1px; background:rgba(255,255,255,0.16); margin:14px 0 12px; }
     .logo-attribution { font-size:11px; color:rgba(255,255,255,0.72); letter-spacing:0.04em; margin-top:8px; line-height:1.45; }
@@ -828,8 +835,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
       <a class="cccco-logo-link" href="https://www.citruscollege.edu" target="_blank" rel="noopener noreferrer" aria-label="Citrus College" style="text-decoration:none;display:block;">
-        <div style="font-family:var(--font-display);font-weight:700;font-size:19px;line-height:1.12;color:#fff;letter-spacing:-0.01em;">Citrus College</div>
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ccc-gold);margin-top:5px;">Community College District</div>
+        <span class="college-logo-chip"><img class="college-logo-img" src="citrus-logo-primary.png" alt="Citrus College" width="1428" height="480" /></span>
       </a>
       <div class="avc-project-name">LIFT Mentor Match Pilot Program</div>
     </div>
