@@ -314,8 +314,12 @@
     .spend-line-row td { padding-top:7px; padding-bottom:7px; background:var(--bg-card); border-bottom:1px solid var(--border); }
     .spend-line-row:hover td { background:var(--bg-surface); }
     /* ════════════ GOALS & OBJECTIVES ════════════ */
-    .goals-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
+    .goals-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; align-items:stretch; }
     @media (max-width:1080px) { .goals-grid { grid-template-columns:1fr; } }
+    /* Goals & Objectives: three equal, perfectly aligned columns on desktop;
+       collapse straight to a single column (never a 2+1 orphan row). */
+    .goals-grid--3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    @media (max-width:1200px) { .goals-grid--3 { grid-template-columns:1fr; max-width:780px; } }
     .goal-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:box-shadow var(--transition),transform var(--transition); }
     .goal-card:hover { box-shadow:var(--shadow-md); transform:translateY(-1px); }
     .goal-card-head { position:relative; padding:20px 22px 18px; border-bottom:1px solid var(--border); background:var(--bg-surface); }
@@ -678,6 +682,12 @@
       .kpi-value { font-size:22px; }
       .topbar-badge { display:none; }
     }
+    /* 4-up KPI rows (Goals & Budget sections): responsive 4 → 2 → 1.
+       Defined after the generic .kpi-grid breakpoints so these win for
+       4-up rows, replacing the old inline grid-template that ignored them. */
+    .kpi-grid--4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    @media (max-width:820px) { .kpi-grid--4 { grid-template-columns:1fr 1fr; } }
+    @media (max-width:420px) { .kpi-grid--4 { grid-template-columns:1fr; } }
     ::-webkit-scrollbar { width:6px; height:6px; }
     ::-webkit-scrollbar-track { background:transparent; }
     ::-webkit-scrollbar-thumb { background:var(--border-strong); border-radius:3px; }
@@ -991,14 +1001,14 @@
           <p data-i18n="goals_sub">The three project goals from the Citrus College workplan (Section 2.1), each with its activities, measurable outcomes, and responsible leadership.</p>
         </div>
 
-        <div class="kpi-grid" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+        <div class="kpi-grid kpi-grid--4">
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Project Goals</div><div class="kpi-value blue">3</div><div class="kpi-sub">Access &middot; Belonging &middot; Scalable model</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Employee Groups</div><div class="kpi-value blue">3</div><div class="kpi-sub">Classified &middot; Faculty &middot; Administrators</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Alliance Reach</div><div class="kpi-value blue">8</div><div class="kpi-sub">Colleges in the LIFT Mentor Match alliance</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Funding Cycle</div><div class="kpi-value blue">2.5 yr</div><div class="kpi-sub">Jan 2026 – Jun 2028</div></div>
         </div>
 
-        <div class="goals-grid">
+        <div class="goals-grid goals-grid--3">
 
           <!-- GOAL 1 -->
           <article class="goal-card goal-card--g1">
@@ -1250,7 +1260,7 @@
       <div id="section-budget" class="section">
         <div class="page-header"><h2 data-i18n="budget_title">Budget Breakdown</h2><p data-i18n="budget_sub">Total award $100,000 split across two budget years. Indirect line ($5,000) is 5% of direct costs ($95,000).</p></div>
 
-        <div class="kpi-grid" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+        <div class="kpi-grid kpi-grid--4">
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Total Award</div><div class="kpi-value blue" id="kpi-total-award">$100,000</div><div class="kpi-sub">Tier 2 award</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label">Direct Costs</div><div class="kpi-value medium-blue" id="kpi-direct">$95,000</div><div class="kpi-sub" id="kpi-direct-sub">95% of total</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar gold"></div><div class="kpi-label">Indirect (7000)</div><div class="kpi-value gold" id="kpi-indirect">$5,000</div><div class="kpi-sub" id="kpi-indirect-sub">5% of direct</div></div>
