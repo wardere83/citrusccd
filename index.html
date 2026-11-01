@@ -21,6 +21,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>window.Chart || document.write('<script src="vendor/chart.umd.js"><\/script>');</script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script>window.html2pdf || document.write('<script src="vendor/html2pdf.bundle.min.js"><\/script>');</script>
   <style>
     /* ════════════ APPLE-INSPIRED POLISH ON CCCCO PALETTE ════════════
        Clean typography, generous whitespace, subtle layered shadows,
@@ -1423,8 +1426,8 @@
               </div>
               <div class="bmr-summary-card gold">
                 <div class="bmr-summary-label">Modified Y1 / Y2</div>
-                <div class="bmr-summary-value" id="bmr-sum-year">$62,627 / $37,373</div>
-                <div class="bmr-summary-sub" id="bmr-sum-year-sub">Baseline $62,627 / $37,373</div>
+                <div class="bmr-summary-value" id="bmr-sum-year">$60,000 / $40,000</div>
+                <div class="bmr-summary-sub" id="bmr-sum-year-sub">Baseline $60,000 / $40,000</div>
               </div>
             </div>
 
@@ -2012,7 +2015,7 @@ const translations = {
     tl_total:'Total',
     tl_pace_label:'Pace:',
     kpi_y1_total_label:'Year 1 Total',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'Tier 1 award',
     sb_dashboard:'Dashboard',
     sb_performance:'Performance',
@@ -2029,7 +2032,7 @@ const translations = {
     kpi_indirect_costs:'Indirect (5%)',
     kpi_indirect_costs_sub:'Object code 7000',
     kpi_y1y2_split:'Year 1 / Year 2',
-    kpi_y1y2_split_sub:'$122,638 / $27,362',
+    kpi_y1y2_split_sub:'$60,000 / $40,000',
     chart_funding_objcode:'Funding by Object Code',
     chart_direct_indirect:'Direct vs. Indirect',
     chart_by_objcode:'By Object Code',
@@ -2121,7 +2124,7 @@ const translations = {
     tl_total:'Total',
     tl_pace_label:'Ritmo:',
     kpi_y1_total_label:'Total Año 1',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'Los 11 distritos',
     sb_dashboard:'Panel',
     sb_performance:'Rendimiento',
@@ -2217,7 +2220,7 @@ const translations = {
     tl_total:'Tổng',
     tl_pace_label:'Tốc độ:',
     kpi_y1_total_label:'Tổng Năm 1',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'Tất cả 11 quận',
     sb_dashboard:'Bảng điều khiển',
     sb_performance:'Hiệu suất',
@@ -2312,7 +2315,7 @@ const translations = {
     tl_total:'الإجمالي',
     tl_pace_label:'الوتيرة:',
     kpi_y1_total_label:'إجمالي السنة 1',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'جميع المقاطعات الـ11',
     sb_dashboard:'لوحة التحكم',
     sb_performance:'الأداء',
@@ -2408,7 +2411,7 @@ const translations = {
     tl_total:'Kabuuan',
     tl_pace_label:'Pace:',
     kpi_y1_total_label:'Kabuuan ng Taon 1',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'Lahat ng 11 distrito',
     sb_dashboard:'Dashboard',
     sb_performance:'Performance',
@@ -2499,7 +2502,7 @@ const translations = {
     flagged_many:'項預算明細已被標記',
     tl_total:'總計', tl_pace_label:'進度:',
     kpi_y1_total_label:'第 1 年總計',
-    overview_lift_sub:'Citrus CCD · Citrus · Peralta · WVM',
+    overview_lift_sub:'AVC · Citrus · Peralta · WVM',
     spend_for_grant_total:'全部 11 個學區',
     sb_dashboard:'儀表板',
     sb_performance:'績效',
@@ -4437,7 +4440,7 @@ function renderSpendDown() {
   const kpiRow = document.getElementById('spend-kpi-row');
   if (kpiRow) {
     kpiRow.innerHTML =
-      '<div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">' + t('kpi_total_grant_label') + '</div><div class="kpi-value blue">' + fmt(totalGrant) + '</div><div class="kpi-sub">Tier 1 award</div></div>' +
+      '<div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">' + t('kpi_total_grant_label') + '</div><div class="kpi-value blue">' + fmt(totalGrant) + '</div><div class="kpi-sub">Tier 2 award</div></div>' +
       '<div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label">' + t('kpi_y1_budget_label') + '</div><div class="kpi-value medium-blue">' + fmt(y1) + '</div><div class="kpi-sub">' + ((y1/totalGrant)*100).toFixed(1) + '% · Jan 2026 – Jun 2027</div></div>' +
       '<div class="kpi-card"><div class="kpi-accent-bar gold"></div><div class="kpi-label">' + t('kpi_y2_budget_label') + '</div><div class="kpi-value gold">' + fmt(y2) + '</div><div class="kpi-sub">' + ((y2/totalGrant)*100).toFixed(1) + '% · Jul 2027 – Jun 2028</div></div>';
   }
