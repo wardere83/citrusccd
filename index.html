@@ -2,7 +2,7 @@
 <!--
   Citrus CCD Project Dashboard
   Project dashboard for Citrus CCD's LIFT Mentor Match Pilot Program — a $100,000 Tier 2 award under the
-  2025–2028 EEO Innovative Best Practices grant initiative.
+  2026–2028 EEO Innovative Best Practices grant initiative.
   Data sourced directly from the grant application (submitted Jul 21, 2025).
 -->
 <html lang="en" data-theme="light">
@@ -15,12 +15,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <meta name="description" content="Citrus Community College District — LIFT Mentor Match Pilot Program dashboard. $100,000 Tier 2 award under the 2025–2028 EEO Innovative Best Practices initiative as part of the 10-college LIFT Alliance (LIFT Alliance). Mentor & Match Professional Platform deployment." />
+  <meta name="description" content="Citrus Community College District — LIFT Mentor Match Pilot Program dashboard. $100,000 Tier 2 award under the 2026–2028 EEO Innovative Best Practices initiative as part of the 10-college LIFT Alliance (LIFT Alliance). Mentor & Match Professional Platform deployment." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
   <style>
     /* ════════════ APPLE-INSPIRED POLISH ON CCCCO PALETTE ════════════
        Clean typography, generous whitespace, subtle layered shadows,
@@ -982,7 +983,7 @@
         </button>
         <img class="topbar-owl" src="citrus-owl.png" alt="" aria-hidden="true" width="778" height="722" />
         <span class="topbar-title" data-i18n="topbar_title">Citrus CCD Project</span>
-        <span class="topbar-badge">2025–2028 EEO IBP</span>
+        <span class="topbar-badge">2026–2028 EEO IBP</span>
       </div>
       <div class="topbar-right">
       <button class="cccco-topbar-stamp a11y-stamp" id="a11yStamp" type="button" onclick="openA11yModal()" aria-haspopup="dialog" aria-controls="a11yModal" aria-label="Open accessibility options" title="Accessibility"><span class="a11y-stamp-label">Accessibility</span></button>
@@ -1027,7 +1028,7 @@
         <div class="grant-meta">
           <div class="grant-meta-item"><label data-i18n="meta_monitor">Grant Monitor</label><span>Bulle Consulting</span></div>
           <div class="grant-meta-divider"></div>
-          <div class="grant-meta-item"><label data-i18n="meta_grantid">Grant ID</label><span>2025-2028 EEO IBP</span></div>
+          <div class="grant-meta-item"><label data-i18n="meta_grantid">Grant ID</label><span>2026-2028 EEO IBP</span></div>
           <div class="grant-meta-divider"></div>
           <div class="grant-meta-item"><label data-i18n="meta_start">Start</label><span>Jan 1, 2026</span></div>
           <div class="grant-meta-divider"></div>
@@ -1036,7 +1037,7 @@
 
         <div class="kpi-grid">
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label" data-i18n="kpi_total_funding">Total Grant Funding</div><div class="kpi-value blue">$100,000</div><div class="kpi-sub" data-i18n="kpi_across">LIFT Mentor Match Pilot Program</div></div>
-          <div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label" data-i18n="kpi_grant_tier">Grant Tier</div><div class="kpi-value medium-blue">Tier 2</div><div class="kpi-sub" data-i18n="kpi_grant_tier_sub">2025&ndash;2028 EEO IBP</div></div>
+          <div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label" data-i18n="kpi_grant_tier">Grant Tier</div><div class="kpi-value medium-blue">Tier 2</div><div class="kpi-sub" data-i18n="kpi_grant_tier_sub">2026&ndash;2028 EEO IBP</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">Alliance Colleges</div><div class="kpi-value blue">8</div><div class="kpi-sub">Statewide LIFT Mentor Match alliance</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label">Employee Groups</div><div class="kpi-value medium-blue">3</div><div class="kpi-sub">Classified &middot; Faculty &middot; Administrators</div></div>
           <div class="kpi-card"><div class="kpi-accent-bar navy"></div><div class="kpi-label">Project Goals</div><div class="kpi-value navy">3</div><div class="kpi-sub">Access &middot; Belonging &middot; Scalable model</div></div>
@@ -1210,7 +1211,7 @@
           <div class="card-body" style="padding:28px;">
             <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;justify-content:space-between;margin-bottom:18px;">
               <div style="flex:1;min-width:300px;">
-                <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ccc-gold);margin-bottom:8px;">2025&ndash;2028 EEO IBP Grant &middot; Tier 2</div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ccc-gold);margin-bottom:8px;">2026&ndash;2028 EEO IBP Grant &middot; Tier 2</div>
                 <div style="font-family:var(--font-display);font-size:24px;font-weight:600;line-height:1.25;letter-spacing:-0.02em;">LIFT Mentor Match Pilot Program</div>
                 <div style="font-size:13.5px;color:rgba(255,255,255,0.78);margin-top:8px;">Citrus Community College District &middot; Citrus College, Glendora, CA</div>
               </div>
@@ -1942,7 +1943,7 @@ const translations = {
     nav_outcomes:'Outcomes', nav_budget:'Budget Breakdown', nav_timeline:'Timeline', nav_contacts:'Contacts', nav_spenddown:'Spend-Down Monitor',
     topbar_title:'Citrus CCD Project',
     goals_title:'Goals & Objectives', goals_sub:'The three project goals from the Citrus College workplan (Section 2.1), each with its activities, measurable outcomes, and responsible leadership.',
-    overview_title:'Program Overview', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_title:'Program Overview', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'Grant Monitor', meta_grantid:'Grant ID', meta_start:'Start', meta_duration:'Funding Cycle', meta_status:'Status',
     kpi_total_funding:'Total Grant Funding', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'Total Districts', kpi_all_submitted:'All submitted',
@@ -2041,7 +2042,7 @@ const translations = {
     kpi_dr_target:'Mentor Match Trained',
     kpi_dr_target_sub:'Classified staff over two cohorts',
     kpi_mentor_target:'Mentor Cohort',
-    kpi_mentor_target_sub:'4 faculty mentors · 8 mentees', kpi_grant_tier:'Grant Tier', kpi_grant_tier_sub:'2025–2028 EEO IBP', kpi_colleges:'Participating Colleges', kpi_colleges_sub:'Citrus College · Glendora, CA', kpi_faculty_target:'Faculty Target', kpi_faculty_target_sub:'Trained across the district by Year 2',},
+    kpi_mentor_target_sub:'4 faculty mentors · 8 mentees', kpi_grant_tier:'Grant Tier', kpi_grant_tier_sub:'2026–2028 EEO IBP', kpi_colleges:'Participating Colleges', kpi_colleges_sub:'Citrus College · Glendora, CA', kpi_faculty_target:'Faculty Target', kpi_faculty_target_sub:'Trained across the district by Year 2',},
   es: {
     nav_booksme:'Reservar con un Experto',
     nav_booksme_short:'Experto',
@@ -2051,7 +2052,7 @@ const translations = {
     booksme_loading:'Cargando la página de reservas…',
     nav_overview:'Resumen', nav_goals:'Metas y Objetivos', nav_districts:'Perfil del Proyecto', nav_outcomes:'Resultados', nav_budget:'Presupuesto', nav_timeline:'Cronograma', nav_contacts:'Contactos', nav_spenddown:'Monitor de Gastos',
     topbar_title:'Proyecto Citrus CCD',
-    overview_title:'Resumen del Programa', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_title:'Resumen del Programa', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'Monitor de Subvención', meta_grantid:'ID de Subvención', meta_start:'Inicio', meta_duration:'Ciclo de Financiamiento', meta_status:'Estado',
     kpi_total_funding:'Financiamiento Total', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'Total Distritos', kpi_all_submitted:'Todos enviados',
@@ -2133,7 +2134,7 @@ const translations = {
     y2_window_short:'Jul 2027 – Jun 2028',
   
     kpi_grant_tier:'Nivel de Subvención',
-    kpi_grant_tier_sub:'EEO IBP 2025–2028',
+    kpi_grant_tier_sub:'EEO IBP 2026–2028',
     kpi_colleges:'Colegios Participantes',
     kpi_colleges_sub:'Citrus College · Glendora, CA',
     kpi_faculty_target:'Meta de Docentes',
@@ -2147,7 +2148,7 @@ const translations = {
     booksme_loading:'Đang tải trang đặt lịch…',
     nav_overview:'Tổng quan', nav_goals:'Mục tiêu & Đối tượng', nav_districts:'Hồ sơ Dự án', nav_outcomes:'Kết quả', nav_budget:'Ngân sách', nav_timeline:'Lịch trình', nav_contacts:'Liên lạc', nav_spenddown:'Theo dõi Chi tiêu',
     topbar_title:'Dự án Citrus CCD',
-    overview_title:'Tổng quan Chương trình', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_title:'Tổng quan Chương trình', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'Người giám sát', meta_grantid:'Mã tài trợ', meta_start:'Bắt đầu', meta_duration:'Chu kỳ tài trợ', meta_status:'Trạng thái',
     kpi_total_funding:'Tổng tài trợ', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'Tổng số quận', kpi_all_submitted:'Tất cả đã nộp',
@@ -2229,7 +2230,7 @@ const translations = {
     y2_window_short:'Th7 2027 – Th6 2028',
   
     kpi_grant_tier:'Hạng Tài Trợ',
-    kpi_grant_tier_sub:'EEO IBP 2025–2028',
+    kpi_grant_tier_sub:'EEO IBP 2026–2028',
     kpi_colleges:'Các Trường Tham Gia',
     kpi_colleges_sub:'Citrus College · Glendora, CA',
     kpi_faculty_target:'Mục Tiêu Giảng Viên',
@@ -2243,7 +2244,7 @@ const translations = {
     booksme_loading:'جارٍ تحميل صفحة الحجز…',
     nav_overview:'نظرة عامة', nav_funds:'التخصيصات', nav_districts:'ملف المشروع', nav_outcomes:'النتائج', nav_budget:'الميزانية', nav_timeline:'الجدول الزمني', nav_contacts:'جهات الاتصال', nav_spenddown:'مراقب الإنفاق',
     topbar_title:'مشروع Citrus CCD',
-    overview_title:'نظرة عامة على البرنامج', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_title:'نظرة عامة على البرنامج', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'مراقب المنحة', meta_grantid:'معرّف المنحة', meta_start:'البداية', meta_duration:'دورة التمويل', meta_status:'الحالة',
     kpi_total_funding:'إجمالي التمويل', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'إجمالي المقاطعات', kpi_all_submitted:'جميعها مُقدَّمة',
@@ -2324,7 +2325,7 @@ const translations = {
     y2_window_short:'يوليو 2027 – يونيو 2028',
   
     kpi_grant_tier:'فئة المنحة',
-    kpi_grant_tier_sub:'2025–2028 EEO IBP',
+    kpi_grant_tier_sub:'2026–2028 EEO IBP',
     kpi_colleges:'الكليات المشاركة',
     kpi_colleges_sub:'كلية ألان هانكوك · سانتا ماريا، كاليفورنيا',
     kpi_faculty_target:'هدف أعضاء هيئة التدريس',
@@ -2338,7 +2339,7 @@ const translations = {
     booksme_loading:'Nilo-load ang booking page…',
     nav_overview:'Pangkalahatang-tanaw', nav_goals:'Mga Layunin at Mithiin', nav_districts:'Profile ng Proyekto', nav_outcomes:'Mga Resulta', nav_budget:'Badyet', nav_timeline:'Iskedyul', nav_contacts:'Mga Kontak', nav_spenddown:'Spend-Down Monitor',
     topbar_title:'Citrus CCD Project',
-    overview_title:'Pangkalahatang-tanaw ng Programa', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_title:'Pangkalahatang-tanaw ng Programa', overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'Grant Monitor', meta_grantid:'ID ng Grant', meta_start:'Simula', meta_duration:'Funding Cycle', meta_status:'Katayuan',
     kpi_total_funding:'Kabuuang Pondo', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'Kabuuang Distrito', kpi_all_submitted:'Lahat naihain',
@@ -2420,7 +2421,7 @@ const translations = {
     y2_window_short:'Hul 2027 – Hun 2028',
   
     kpi_grant_tier:'Tier ng Grant',
-    kpi_grant_tier_sub:'2025–2028 EEO IBP',
+    kpi_grant_tier_sub:'2026–2028 EEO IBP',
     kpi_colleges:'Mga Kalahok na Kolehiyo',
     kpi_colleges_sub:'Citrus College · Glendora, CA',
     kpi_faculty_target:'Target na Faculty',
@@ -2435,7 +2436,7 @@ const translations = {
     nav_overview:'總覽', nav_goals:'目標與宗旨', nav_districts:'計畫簡介', nav_outcomes:'成果', nav_budget:'預算明細', nav_timeline:'時間表', nav_contacts:'聯絡資訊', nav_spenddown:'支出進度監測',
     topbar_title:'Citrus CCD 計畫',
     overview_title:'計畫總覽',
-    overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2025–2028 EEO IBP grant cycle.',
+    overview_sub:'Citrus Community College District — Tier 2 / LIFT Alliance grantee, LIFT Mentor Match Pilot Program. $100,000 award from the 2026–2028 EEO IBP grant cycle.',
     meta_monitor:'計畫監督', meta_grantid:'補助編號', meta_start:'起始日期', meta_duration:'資助週期', meta_status:'狀態',
     kpi_total_funding:'補助金總額', kpi_across:'LIFT Mentor Match Pilot Program',
     kpi_total_districts:'學區總數', kpi_all_submitted:'全部已提交',
@@ -2511,7 +2512,7 @@ const translations = {
     y2_window_short:'2027年7月–2028年6月',
   
     kpi_grant_tier:'補助等級',
-    kpi_grant_tier_sub:'2025–2028 EEO IBP',
+    kpi_grant_tier_sub:'2026–2028 EEO IBP',
     kpi_colleges:'參與學院',
     kpi_colleges_sub:'Citrus College · 加州聖瑪麗亞',
     kpi_faculty_target:'教職員目標',
