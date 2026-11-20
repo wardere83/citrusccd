@@ -1972,6 +1972,7 @@ const translations = {
     chart_yearly:'Year-by-Year Spend Profile', chart_all_districts:'All Districts',
     tl_y1:'Year 1 (Jan 2026 – Jun 2027)', tl_y2:'Year 2 (Jul 2027 – Jun 2028)',
     contacts_title:'Project Contacts', contacts_sub:'Project leads, alternates, and fiscal reporters',
+    spend_award_tier:'Tier 2 award',
     spend_title:'Spend-Down Monitor',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     filter_combined:'Combined View', filter_y1:'Year 1', filter_y2:'Year 2',
@@ -2081,6 +2082,7 @@ const translations = {
     chart_yearly:'Perfil de Gasto Año por Año', chart_all_districts:'Todos los Distritos',
     tl_y1:'Año 1 (Ene 2026 – Jun 2027)', tl_y2:'Año 2 (Jul 2027 – Jun 2028)',
     contacts_title:'Contactos de Distrito', contacts_sub:'Líderes de proyecto, alternos y reporteros fiscales',
+    spend_award_tier:'Subvención de Nivel 2',
     spend_title:'Monitor de Gastos',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     filter_combined:'Vista Combinada', filter_y1:'Año 1', filter_y2:'Año 2',
@@ -2177,6 +2179,7 @@ const translations = {
     chart_yearly:'Hồ sơ chi tiêu hàng năm', chart_all_districts:'Tất cả quận',
     tl_y1:'Năm 1 (Th1 2026 – Th6 2027)', tl_y2:'Năm 2 (Th7 2027 – Th6 2028)',
     contacts_title:'Liên hệ quận', contacts_sub:'Trưởng dự án, người thay thế và báo cáo tài chính',
+    spend_award_tier:'Tài trợ Cấp 2',
     spend_title:'Theo dõi Chi tiêu',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     filter_combined:'Chế độ Kết hợp', filter_y1:'Năm 1', filter_y2:'Năm 2',
@@ -2273,6 +2276,7 @@ const translations = {
     chart_yearly:'ملف الإنفاق السنوي', chart_all_districts:'جميع المقاطعات',
     tl_y1:'السنة 1 (يناير 2026 – يونيو 2027)', tl_y2:'السنة 2 (يوليو 2027 – يونيو 2028)',
     contacts_title:'جهات اتصال المقاطعة', contacts_sub:'قادة المشروع والبدلاء ومراسلو الميزانية',
+    spend_award_tier:'منحة الفئة 2',
     spend_title:'مراقب الإنفاق',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     underspend_title:'⚠ تنبيهات مخاطر الإنفاق الناقص',
@@ -2368,6 +2372,7 @@ const translations = {
     chart_yearly:'Profile ng Paggastos Taon-taon', chart_all_districts:'Lahat ng Distrito',
     tl_y1:'Taon 1 (Ene 2026 – Hun 2027)', tl_y2:'Taon 2 (Hul 2027 – Hun 2028)',
     contacts_title:'Mga Kontak ng Distrito', contacts_sub:'Mga lider ng proyekto, kapalit, at fiscal reporter',
+    spend_award_tier:'Grant ng Tier 2',
     spend_title:'Spend-Down Monitor',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     filter_combined:'Combined View', filter_y1:'Year 1', filter_y2:'Year 2',
@@ -2465,6 +2470,7 @@ const translations = {
     chart_yearly:'逐年支出概況', chart_all_districts:'所有學區',
     tl_y1:'第 1 年(2026 年 1 月 – 2027 年 6 月)', tl_y2:'第 2 年(2027 年 7 月 – 2028 年 6 月)',
     contacts_title:'學區聯絡資訊', contacts_sub:'計畫負責人、副負責人和財務報告人',
+    spend_award_tier:'第 2 級補助金',
     spend_title:'支出進度監測',
     spend_sub:'Track Citrus College’s spend pace across the two-year funding cycle and flag risk of underspending.',
     underspend_title:'⚠ 支出不足風險警示',
@@ -4438,7 +4444,7 @@ function renderSpendDown() {
   const kpiRow = document.getElementById('spend-kpi-row');
   if (kpiRow) {
     kpiRow.innerHTML =
-      '<div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">' + t('kpi_total_grant_label') + '</div><div class="kpi-value blue">' + fmt(totalGrant) + '</div><div class="kpi-sub">Tier 1 award</div></div>' +
+      '<div class="kpi-card"><div class="kpi-accent-bar blue"></div><div class="kpi-label">' + t('kpi_total_grant_label') + '</div><div class="kpi-value blue">' + fmt(totalGrant) + '</div><div class="kpi-sub">' + t('spend_award_tier') + '</div></div>' +
       '<div class="kpi-card"><div class="kpi-accent-bar medium-blue"></div><div class="kpi-label">' + t('kpi_y1_budget_label') + '</div><div class="kpi-value medium-blue">' + fmt(y1) + '</div><div class="kpi-sub">' + ((y1/totalGrant)*100).toFixed(1) + '% · Jan 2026 – Jun 2027</div></div>' +
       '<div class="kpi-card"><div class="kpi-accent-bar gold"></div><div class="kpi-label">' + t('kpi_y2_budget_label') + '</div><div class="kpi-value gold">' + fmt(y2) + '</div><div class="kpi-sub">' + ((y2/totalGrant)*100).toFixed(1) + '% · Jul 2027 – Jun 2028</div></div>';
   }
@@ -4473,8 +4479,8 @@ function renderSpendDown() {
           '<td style="padding-left:32px;border-left:4px solid ' + yearBandColor + ';opacity:0.95;"><span style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.04em;margin-right:8px;">' + li.fy + '</span>' + codeBadge + '<span style="font-size:12.5px;color:var(--text-primary);">' + li.label + '</span></td>' +
           '<td class="amount num" style="font-size:12.5px;">' + fmt(li.amount) + '</td>' +
           '<td><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%;background:var(--text-muted)"></div></div><span style="font-size:11px;color:var(--text-muted);">0.0%</span></td>' +
-          '<td class="center"><button onclick="togglePeriodPace(this,\'" + liId + "\')" data-pace="' + pace + '" style="background:' + paceColor + ';color:#fff;padding:4px 12px;border-radius:14px;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;border:none;letter-spacing:0.04em;text-transform:uppercase;min-width:80px;display:inline-block;text-align:center;">' + paceText + '</button></td>' +
-          '<td class="center"><button onclick="togglePeriodStatus(this,\'" + liId + "\')" data-on="' + (isOffTrack?'0':'1') + '" style="background:' + statusColor + ';color:#fff;padding:4px 12px;border-radius:14px;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;border:none;letter-spacing:0.04em;text-transform:uppercase;min-width:80px;display:inline-block;text-align:center;">' + statusText + '</button></td>' +
+          '<td class="center"><button onclick="togglePeriodPace(this,\'' + liId + '\')" data-pace="' + pace + '" style="background:' + paceColor + ';color:#fff;padding:4px 12px;border-radius:14px;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;border:none;letter-spacing:0.04em;text-transform:uppercase;min-width:80px;display:inline-block;text-align:center;">' + paceText + '</button></td>' +
+          '<td class="center"><button onclick="togglePeriodStatus(this,\'' + liId + '\')" data-on="' + (isOffTrack?'0':'1') + '" style="background:' + statusColor + ';color:#fff;padding:4px 12px;border-radius:14px;font-size:11px;font-weight:700;white-space:nowrap;cursor:pointer;border:none;letter-spacing:0.04em;text-transform:uppercase;min-width:80px;display:inline-block;text-align:center;">' + statusText + '</button></td>' +
         '</tr>';
       }).join('');
       return headerRow + lineRows;
